@@ -1,0 +1,181 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+.main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.80)), url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    background-attachment: fixed;
+    color: white;
+  }
+
+
+  .navbar-nav li.nav-item {
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .3s ease-in; /* Add transition for a smooth effect */
+  }
+  
+  .navbar-nav li.nav-item:hover {
+    border-bottom: 2px solid white;
+  }
+  
+  #second-section {
+    padding-top: 80px; /* height of your header */
+    margin-top: -80px;
+  }
+
+
+
+  div .card  {
+  color: black;
+  font-size: 1.5rem;
+  }
+  div .card p {
+    font-size: 1rem;
+  }
+
+  .feature .feature-icon {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature .feature-icon img {
+    width: 100%;
+    height: auto;
+    opacity: .8;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.feature .feature-icon a {
+    text-decoration: none; /* Remove the blue overlay */
+    border: none; /* Add this line to remove any default border styling */
+    background-color: none;
+}
+
+.feature .feature-icon:hover img {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.card.border-0.p-2 {
+  transition: background-color 0.5s;
+}
+.card.border-0.p-2:hover {
+background-color: rgb(239, 239, 239);
+}
+.feature img {
+  cursor: pointer;
+}
+
+
+
+
+/* ... (existing styles) ... */
+/* ... (existing styles) ... */
+
+.team-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.team-member {
+  margin: 10px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  flex-basis: calc(50% - 20px); /* Set flex-basis to 50%, accounting for margins */
+}
+
+.team-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 23rem; /* Adjust the height as needed */
+  object-fit: cover;
+  backface-visibility: hidden;
+  transition: transform 0.3s;
+  
+}
+
+
+.rounded {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.details {
+  font-size: 16px;
+  padding: 20px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(100%);
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+  text-align: center;
+}
+
+.team-member:hover .details {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.google-map {
+  padding-bottom: 50%;
+  position: relative;
+  margin: 0 1%;
+}
+
+.google-map iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: #040404;
+  content: " ";
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 10px; }
+
+  div a {
+text-decoration: none;
+  }
+
+  div .col-12.mb-2.mt-3:after {
+  display: block;
+  height: 2px;
+  background-color: #878686;
+  content: " ";
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 10px;
+  }
+
+  .offcanvas {
+    height: 50vh !important; /* Use !important to ensure the style is applied */
+  }
+  
+  
+  @media (max-width: 991px) {
+    .offcanvas {
+      height: 100vh !important; /* Use !important to ensure the style is applied */
+    }
+  }
