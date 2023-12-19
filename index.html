@@ -40,7 +40,7 @@
       </div>
     </div>
   </nav>
-  <div class="main d-flex justify-content-center align-items-center">
+  <div class="main d-flex justify-content-center align-items-center" id="home">
     <div class="container text-center">
       <div class="row">
         <div class="col">
@@ -745,62 +745,70 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
   <script>
-    function smoothScroll(targetId) {
-            const target = document.getElementById(targetId);
+// Function to smoothly scroll to a target element by ID
+function smoothScroll(targetId) {
+    const target = document.getElementById(targetId);
 
-            if (target) {
-                const offset = 80; // Adjust the offset as needed
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-                window.scrollTo({
-                    top: targetPosition - offset,
-                    behavior: 'smooth'
-                });
-            }
-        }
+    if (target) {
+        // Adjust the offset as needed
+        const offset = 110;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY;
 
-        function scrollToTop() {
-            // Scroll to the top of the page with a smooth animation
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // Attach click event listeners to nav links
-            document.querySelectorAll('nav a').forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    smoothScroll(targetId);
-                });
-            });
-
-            // Show home section
-            document.getElementById('home').style.display = 'block';
-
-            // Attach click event listener to the logo
-            const logo = document.querySelector('.navbar-brand img');
-            if (logo) {
-                logo.addEventListener('click', function () {
-                    scrollToTop();
-                });
-            }
-
-            // Attach click event listener to the "Home" link in the navigation
-            const homeLink = document.querySelector('nav a[href="#home"]');
-            if (homeLink) {
-                homeLink.addEventListener('click', function () {
-                    scrollToTop();
-                });
-            }
-
-            document.querySelectorAll('.feature').forEach(function (feature) {
-                feature.addEventListener('click', function () {
-                    window.location.href = this.querySelector('.card-hover').getAttribute('href');
-                });
-            });
+        // Use smooth scroll behavior
+        window.scrollTo({
+            top: targetPosition - offset,
+            behavior: 'smooth'
         });
+    }
+}
+
+// Function to scroll to the top of the page with a smooth animation
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Attach click event listeners to navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            // Extract the target ID from the href attribute
+            const targetId = this.getAttribute('href').substring(1);
+            smoothScroll(targetId);
+        });
+    });
+
+    // Show the home section
+    document.getElementById('home').style.display = 'block';
+
+    // Attach click event listener to the logo to scroll to the top
+    const logo = document.querySelector('.navbar-brand img');
+    if (logo) {
+        logo.addEventListener('click', function () {
+            scrollToTop();
+        });
+    }
+
+    // Attach click event listener to the "Home" link in the navigation
+    const homeLink = document.querySelector('nav a[href="#home"]');
+    if (homeLink) {
+        homeLink.addEventListener('click', function () {
+            scrollToTop();
+        });
+    }
+
+    // Attach click event listener to the feature elements for redirection
+    document.querySelectorAll('.feature').forEach(function (feature) {
+        feature.addEventListener('click', function () {
+            // Redirect to the URL specified in the card-hover element
+            window.location.href = this.querySelector('.card-hover').getAttribute('href');
+        });
+    });
+});
+
   </script>
 
 </body>
